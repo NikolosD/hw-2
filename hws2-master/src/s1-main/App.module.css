@@ -3,9 +3,14 @@
 }
 
 .hw {
-
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hwTitle {
-
+    font-size: 22px;
+    font-weight: 600;
 }
