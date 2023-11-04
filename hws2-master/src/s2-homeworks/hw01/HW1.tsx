@@ -4,6 +4,7 @@ import MessageSender from './message-sender/MessageSender'
 import s2 from '../../s1-main/App.module.css'
 import FriendMessage from './friend-message/FriendMessage'
 import avatar from './avatar.png'
+import s2hw from './hw1.module.css'
 
 /*
 * 1 - описать тип MessageType
@@ -46,17 +47,20 @@ export const friendMessage0: MessageType = {
 
 const HW1 = () => {
     return (
-        <div id={'hw1'} style={{width: '75%', margin: 'auto'}}>
+        <div id={'hw1'} className={s2hw.container}>
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
-                <div style={{width: '100%', marginBottom: '20px'}}>
-                    <Message message={message0} />
-                    <FriendMessage message={friendMessage0} />
+                <div className={s2hw.messageWrap}>
+                   <div>
+                       <Message message={message0} />
+                       <FriendMessage message={friendMessage0} />
+                   </div>
+                    <MessageSender  M={Message}/>
                 </div>
 
                 {/*для автоматической проверки дз (не менять)*/}
-                <MessageSender  M={Message} />
+
             </div>
         </div>
     )
