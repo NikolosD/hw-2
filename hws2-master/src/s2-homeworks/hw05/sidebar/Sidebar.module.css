@@ -9,9 +9,11 @@
     top: 0;
 
     background: #fff;
+    display: none;
 }
 
 .sidebar.open {
+    display: block;
     position: fixed;
     transition: 0.2s ease-out;
 

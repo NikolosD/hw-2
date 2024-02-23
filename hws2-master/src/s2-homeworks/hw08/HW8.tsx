@@ -17,7 +17,7 @@ export type UserType = {
     age: number
 }
 
-const initialPeople: UserType[] = [
+export const initialPeople: UserType[] = [
     // студенты могут поменять имя/возраст/количество объектов, _id должны быть целочисленные
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
@@ -63,6 +63,7 @@ const HW8 = () => {
                             id={'hw8-button-up'}
                             onClick={sortUp}
                             xType={currentSort === 'up' ? '' : 'secondary'}
+                            className={s.buttonStyles}
                         >
                             Sort up
                         </SuperButton>
@@ -70,6 +71,8 @@ const HW8 = () => {
                             id={'hw8-button-down'}
                             onClick={sortDown}
                             xType={currentSort === 'down' ? '' : 'secondary'}
+                            className={s.buttonStyles}
+
                         >
                             Sort down
                         </SuperButton>
@@ -77,6 +80,8 @@ const HW8 = () => {
                             id={'hw8-button-18'}
                             onClick={check18}
                             xType={currentSort === '18' ? '' : 'secondary'}
+                            className={s.buttonStyles}
+
                         >
                             Check 18+
                         </SuperButton>
@@ -89,7 +94,6 @@ const HW8 = () => {
                             <td className={s.ageCol}>Age</td>
                         </tr>
                         </thead>
-
                         <tbody>{finalPeople}</tbody>
                     </table>
                 </div>

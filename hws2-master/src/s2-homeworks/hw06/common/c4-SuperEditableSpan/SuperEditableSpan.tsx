@@ -2,11 +2,12 @@ import React, {
     DetailedHTMLProps,
     InputHTMLAttributes,
     HTMLAttributes,
-    useState,
+    useState, useEffect,
 } from 'react'
 import s from './SuperEditableSpan.module.css'
 import SuperInputText from '../../../hw04/common/c1-SuperInputText/SuperInputText'
 import editIcon from './editIcon.svg'
+import {restoreState, saveState} from "../../localStorage/localStorage";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
@@ -39,23 +40,31 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const [editMode, setEditMode] = useState<boolean>(false)
     const {children, onDoubleClick, className, defaultText, ...restSpanProps} =
     spanProps || {}
+    const [value, setValue] = useState<string>(restoreState<string>('hw6-editable-span-value', ''));
+
+    useEffect(() => {
+        setValue(restoreState<string>('hw6-editable-span-value', ''));
+    }, []);
 
     const onEnterCallback = () => {
         // выключить editMode при нажатии Enter // делают студенты
-
+        setEditMode(false)
         onEnter?.()
+        saveState('hw6-editable-span-value', value);
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
-
+        setEditMode(false)
         onBlur?.(e)
+        saveState('hw6-editable-span-value', value);
     }
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
         // включить editMode при двойном клике // делают студенты
-
+        setEditMode(true)
         onDoubleClick?.(e)
+        saveState('hw6-editable-span-value', value);
     }
 
     const spanClassName = s.span

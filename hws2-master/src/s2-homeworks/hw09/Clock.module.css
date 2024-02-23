@@ -1,14 +1,47 @@
 .buttonsContainer {
+    margin-top: 55px;
 }
 
 .clock {
 }
 
 .watch {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .watch strong {
 }
 
 .more {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.styledButton{
+    padding: 5px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px;
+    background: #06C;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.styledButton:disabled{
+    opacity: 0.4;
+}
+
+
+.styledButton:first-child{
+  margin-right: 21px;
 }
