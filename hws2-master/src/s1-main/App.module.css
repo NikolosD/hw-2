@@ -1,5 +1,8 @@
 .App {
     --header_height: 60px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .hw {
@@ -15,5 +18,19 @@
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    position: relative; /* Добавьте это */
 }
+
+.hwTitle::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #9e9e9e;
+    margin-bottom: 10px;
+    position: absolute; /* Измените это */
+    bottom: -20px; /*Добавьте это */
+    opacity: 0.5;
+}
+
+
