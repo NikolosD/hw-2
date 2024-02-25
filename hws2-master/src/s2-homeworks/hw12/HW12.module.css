@@ -9,7 +9,7 @@
 }
 
 [data-theme='3'] {
-    --color: #FFFFFF;
+    --color: #000000;
     --background: #212A34;
 }
 
@@ -19,5 +19,9 @@ html {
 }
 
 .select {
-
+    box-sizing: border-box;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 2px;
+    width: 171px;
+    height: 36px;
 }
