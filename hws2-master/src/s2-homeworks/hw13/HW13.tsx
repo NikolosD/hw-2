@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import axios from 'axios'
+import axios, {AxiosError} from 'axios'
 import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
+import {logDOM} from "@testing-library/react";
 
 /*
 * 1 - дописать функцию send
@@ -20,6 +21,11 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    type ServerResponse =  {
+        errorText: string;
+        info: string;
+    }
+
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
@@ -32,16 +38,38 @@ const HW13 = () => {
         setInfo('...loading')
 
         axios
-            .post(url, {success: x})
+            .post<ServerResponse>(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
+                setText(res.data.errorText)
+                setInfo(res.data.info)
+
 
             })
-            .catch((e) => {
+            .catch((e:AxiosError<ServerResponse>) => {
                 // дописать
+                if(e.response){
+                    const statusCode = e.response.status
 
+                    if(statusCode === 400) {
+                        setCode('Code 400')
+                        setImage(error400)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                    }else if(statusCode=== 500){
+                        setCode('Code 500')
+                        setImage(error500)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                    }else{
+                        setImage(errorUnknown)
+                        setCode('Code unknown')
+                        setText(e.name)
+                        setInfo(e.message)
+                    }
+                }
             })
     }
 
