@@ -2,6 +2,38 @@
 
 }
 
-.loading {
 
+.loading {
+    display: flex;
+    justify-content: end;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    text-align: left;
+}
+
+.superInput{
+    width: 468px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    padding: 8px 12px;
+}
+
+
+.superInput:active{
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 102, 204);
+    border-radius: 2px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.wholeContent{
+    display: flex;
 }

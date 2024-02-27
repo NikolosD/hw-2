@@ -35,21 +35,17 @@ const HW14 = () => {
         getTechs(value)
             .then((res) => {
                 // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if(res && res.data){
+                    setTechs(res.data.techs)
+                }
+                setLoading(false)
             })
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
-        // делает студент
+        setSearchParams(value)
 
-        // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
     }
 
     useEffect(() => {
@@ -65,24 +61,27 @@ const HW14 = () => {
     ))
 
     return (
-        <div id={'hw14'}>
+        <div id={'hw14'} className={s.wholeContent}>
             <div className={s2.hwTitle}>Homework #14</div>
 
-            <div className={s2.hw}>
-                <SuperDebouncedInput
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
+                <div className={s2.hw}>
+                    <div className={s.content}>
+                    <SuperDebouncedInput
+                        id={'hw14-super-debounced-input'}
+                        value={find}
+                        onChangeText={onChangeText}
+                        onDebouncedChange={sendQuery}
+                        className={s.superInput}
+                    />
 
-                <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br/>}
+                    <div id={'hw14-loading'} className={s.loading}>
+                        {isLoading ? '...ищем' : <br/>}
+                    </div>
+
+                    {mappedTechs}
+                    </div>
                 </div>
-
-                {mappedTechs}
             </div>
-        </div>
     )
 }
 
