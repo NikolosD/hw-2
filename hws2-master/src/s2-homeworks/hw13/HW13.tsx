@@ -66,8 +66,8 @@ const HW13 = () => {
                     }else{
                         setImage(errorUnknown)
                         setCode('Code unknown')
-                        setText(e.name)
-                        setInfo(e.message)
+                        setInfo(e.name)
+                        setText(e.message)
                     }
                 }
             })
@@ -84,6 +84,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
+                        className={s.hw13_button}
 
                     >
                         Send true
@@ -93,6 +94,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
+                        className={s.hw13_button}
 
                     >
                         Send false
@@ -102,6 +104,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
+                        className={s.hw13_button}
 
                     >
                         Send undefined
@@ -111,7 +114,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        className={s.hw13_button}
                     >
                         Send null
                     </SuperButton>
