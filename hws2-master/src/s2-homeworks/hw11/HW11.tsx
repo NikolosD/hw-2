@@ -25,7 +25,7 @@ export function HW11() {
             setValue1(value)
         }
     }
-console.log(value2)
+
     return (
         <div id={'hw11'}>
             <div className={s2.hwTitle}>Homework #11</div>
