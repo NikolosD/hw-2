@@ -3,5 +3,32 @@
 }
 
 .loading {
+    display: flex;
+    justify-content: end;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    text-align: left;
+}
+
+.hw14_container{
+    display: flex;
+    flex-direction: column;
+    min-width: 468px;
+}
+
+.hw14_input{
+    box-sizing: border-box;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    width: 100%;
+    height: auto;
+}
+
+.hw14_input:active{
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 102, 204);
+    border-radius: 2px;
 
 }
