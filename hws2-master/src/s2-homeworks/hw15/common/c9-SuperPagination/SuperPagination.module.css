@@ -1,11 +1,25 @@
 .pagination {
     display: flex;
+    max-width: 606px;
+    align-items: center;
+    margin-bottom: 36px;
 }
 
 .text1 {
+    margin-left: 24px;
+    margin-right: 10px;
+}
+
+.text1::first-letter {
+    text-transform: uppercase;
 
 }
 
 .text2 {
+    margin-left: 6px;
+}
 
+
+.customPagination{
+    display: flex;
 }

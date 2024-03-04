@@ -3,25 +3,53 @@
 }
 
 .developer {
-
+    width: 100%;
 }
 
 .techHeader {
+    font-weight: bold;
     width: 50vw;
 }
 
-.developerHeader {
+.techHeader::first-letter {
+    text-transform: uppercase;
+}
 
+.developerHeader {
+    font-weight: bold;
+    width: 100%;
+
+}
+.developerHeader::first-letter {
+    text-transform: uppercase;
 }
 
 .row {
     display: flex;
+    max-width: 606px;
+    padding: 11px 0 9px 17px;
+    border-bottom: 1px solid rgb(229, 229, 229);;
+}
+
+.row:last-child{
+    border: none;
 }
 
 .rowHeader {
     display: flex;
+    background: rgb(229, 229, 229);
+    max-width: 606px;
+    align-items: center;
+    padding: 11px 0 9px 17px;
 }
 
 .loading {
+}
 
+.hw15_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination{
 }

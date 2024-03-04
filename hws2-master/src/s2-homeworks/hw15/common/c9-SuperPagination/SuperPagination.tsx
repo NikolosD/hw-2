@@ -29,18 +29,21 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
 
     return (
         <div className={s.pagination}>
+            <div className={s.customPagination}>
             <Pagination
                 id={id + '-pagination'}
                 sx={{
                     // стили для Pagination // пишет студент
                 }}
+                shape={"rounded"}
                 page={page}
                 count={lastPage}
+                color={"primary"}
                 onChange={onChangeCallback}
                 hideNextButton
                 hidePrevButton
             />
-
+            </div>
             <span className={s.text1}>
                 показать
             </span>

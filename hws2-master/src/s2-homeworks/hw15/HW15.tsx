@@ -108,13 +108,15 @@ const HW15 = () => {
 
             <div className={s2.hw}>
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
-
+                <div className={s.hw15_container}>
+                    <div className={s.pagination}>
                 <SuperPagination
                     page={page}
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
                 />
+                    </div>
 
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
@@ -129,6 +131,7 @@ const HW15 = () => {
                 </div>
 
                 {mappedTechs}
+            </div>
             </div>
         </div>
     )
